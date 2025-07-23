@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake Como Dream Itinerary | 5 Days in Paradise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gold: #f39c12;
+            --green: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1551447820-33aa64602b0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .tagline {
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--gold);
+            margin-top: 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Itinerary */
+        .day-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .day-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .day-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .day-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .day-title {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
+        .day-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .day-content {
+            padding: 30px;
+        }
+        
+        .time-block {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .time-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .time-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .time-icon {
+            background: var(--secondary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .time-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin: 0;
+        }
+        
+        .activity-description {
+            margin-left: 55px;
+        }
+        
+        .activity-description h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .cost {
+            display: inline-block;
+            background: var(--light);
+            color: var(--dark);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .cost.free {
+            background: #e8f5e9;
+            color: var(--green);
+        }
+        
+        .cost.paid {
+            background: #ffebee;
+            color: var(--accent);
+        }
+        
+        /* Budget Section */
+        .budget-section {
+            background: linear-gradient(to right, var(--primary), var(--dark));
+            color: white;
+        }
+        
+        .budget-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .budget-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .budget-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+        
+        .budget-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .total-budget {
+            grid-column: 1 / -1;
+            background: rgba(231, 76, 60, 0.2);
+        }
+        
+        .budget-breakdown {
+            margin-top: 30px;
+        }
+        
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .breakdown-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* Map Section */
+        .map-container {
+            height: 400px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+            position: relative;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 80px 0 40px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .day-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .day-number {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Lake Como Dream Itinerary</h1>
+                <p>Scopri le meraviglie del Lago di Como in un viaggio indimenticabile di 5 giorni per 2 persone</p>
+                <p class="tagline">Dove la natura incontra l'eleganza italiana</p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Lake<span>Como</span></div>
+            <ul class="nav-links">
+                <li><a href="#itinerary">Itinerario</a></li>
+                <li><a href="#budget">Budget</a></li>
+                <li><a href="#gallery">Galleria</a></li>
+                <li><a href="#map">Mappa</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Itinerary Section -->
+        <section id="itinerary">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Itinerario 5 Giorni</h2>
+                    <p>Un viaggio attraverso i paesaggi più suggestivi del Lago di Como</p>
+                </div>
+                
+                <!-- Day 1 -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <div>
+                            <div class="day-number">01</div>
+                        </div>
+                        <div>
+                            <h3 class="day-title">Como Città</h3>
+                            <p class="day-subtitle">Il cuore del lago</p>
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <h3 class="time-title">Mattina</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Arrivo e Visita del Centro Storico</h4>
+                                <p>Inizio del viaggio a Como con un'immersione nel centro storico. Visita della Basilica di Sant'Abbondio (X sec.), uno dei gioielli dell'arte romanica lombarda. Passeggiata lungo Via Plinio per ammirare i palazzi storici e il Broletto (sede del Comune).</p>
+                                <span class="cost free">Gratis</span>
+                            </div>
+                        </div>
+                        
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-cloud-sun"></i>
+                                </div>
+                                <h3 class="time-title">Pomeriggio</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Gita in Barca e Visita a Bellagio</h4>
+                                <p>Traversata in battello fino a Bellagio, considerata la "Perla del Lago". Esplorazione del centro con le sue vie acciottolate, visita al Giardino Serbelloni (parcheggio panoramico) e degustazione di specialità locali come missoltini e polenta taragna.</p>
+                                <span class="cost paid">€35 a persona (battello)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-moon"></i>
+                                </div>
+                                <h3 class="time-title">Sera</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Cena a Bellagio e Ritorno</h4>
+                                <p>Cena romantica al ristorante "Barchetta" con vista sul lago. Degustazione di risotto al pesce di lago e vino locale. Ritorno serale a Como con l'ultimo battello della giornata.</p>
+                                <span class="cost paid">€60 a persona</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 2 -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <div>
+                            <div class="day-number">02</div>
+                        </div>
+                        <div>
+                            <h3 class="day-title">Varenna e Menaggio</h3>
+                            <p class="day-subtitle">Due gemme del lato orientale</p>
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <h3 class="time-title">Mattina</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Varenna e Castello di Vezio</h4>
+                                <p>Trasferimento a Varenna, uno dei borghi più fotografati d'Italia. Visita al Castello di Vezio per godere di panorami mozzafiato. Esplorazione del borgo con le sue scalinate caratteristiche e le case colorate affacciate sul lago.</p>
+                                <span class="cost paid">€8 a persona (ingresso castello)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-cloud-sun"></i>
+                                </div>
+                                <h3 class="time-title">Pomeriggio</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Menaggio e Escursione a Piedi</h4>
+                                <p>Spostamento a Menaggio con battello. Passeggiata lungo il Sentiero del Viandante, un percorso panoramico che collega i paesi del lago. Visita alla Villa Carlotta con i suoi giardini all'inglese e alla Pinacoteca.</p>
+                                <span class="cost paid">€25 a persona (battello + ingresso)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-moon"></i>
+                                </div>
+                                <h3 class="time-title">Sera</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Cena Tipica e Passeggiata Serale</h4>
+                                <p>Cena al ristorante "La Punta" a Menaggio con vista sul lago. Specialità di pesce locale e vini della Brianza. Passeggiata serale lungo il lungolago e ritorno a Como.</p>
+                                <span class="cost paid">€55 a persona</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 3 -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <div>
+                            <div class="day-number">03</div>
+                        </div>
+                        <div>
+                            <h3 class="day-title">Stresa e Isola Bella</h3>
+                            <p class="day-subtitle">Verso il confine con la Svizzera</p>
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <h3 class="time-title">Mattina</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Trasferimento a Stresa e Visita alla Città</h4>
+                                <p>Viaggio in treno panoramico fino a Stresa (circa 1h30). Visita al centro cittadino con Piazza Verbano e il lungolago. Ammirazione delle Alpi con vista sul Monte Rosa e sul Matterhorn svizzero.</p>
+                                <span class="cost paid">€15 a persona (treno)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-cloud-sun"></i>
+                                </div>
+                                <h3 class="time-title">Pomeriggio</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Isola Bella e Borromeo</h4>
+                                <p>Gita in barca all'Isola Bella, una delle Borromee. Visita al Palazzo Borromeo con i suoi saloni decorati e ai giardini all'italiana. Esplorazione dell'isola e delle sue bellezze architettoniche.</p>
+                                <span class="cost paid">€28 a persona (battello + ingresso)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-moon"></i>
+                                </div>
+                                <h3 class="time-title">Sera</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Cena Panoramica e Ritorno</h4>
+                                <p>Cena al ristorante "La Pergola" con vista sul lago Maggiore e sulle Alpi. Degustazione di piatti della tradizione piemontese e vini locali. Ritorno serale a Como in treno.</p>
+                                <span class="cost paid">€65 a persona</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 4 -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <div>
+                            <div class="day-number">04</div>
+                        </div>
+                        <div>
+                            <h3 class="day-title">Lecco e Monte San Martino</h3>
+                            <p class="day-subtitle">Dove nasce il fiume Adda</p>
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <h3 class="time-title">Mattina</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Lecco e Visita al Museo</h4>
+                                <p>Trasferimento a Lecco con treno panoramico. Visita al Museo della Memoria e al Ponte Kennedy. Passeggiata lungo il lungolago e visita alla Chiesa di San Nicolao con affreschi di Bernardino Luini.</p>
+                                <span class="cost paid">€12 a persona (treno)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-cloud-sun"></i>
+                                </div>
+                                <h3 class="time-title">Pomeriggio</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Escursione al Monte San Martino</h4>
+                                <p>Escursione guidata al Monte San Martino (1095m) per godere di panorami unici sul lago e sulle Prealpi. Percorso ad anello di media difficoltà con paesaggi mozzafiato.</p>
+                                <span class="cost paid">€45 a persona (escursione guidata)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-moon"></i>
+                                </div>
+                                <h3 class="time-title">Sera</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Cena con Vista e Ritorno</h4>
+                                <p>Cena al ristorante "Il Gatto Nero" a Lecco con vista panoramica. Specialità della cucina bergamasca come casonsei e polenta e osei. Ritorno serale a Como.</p>
+                                <span class="cost paid">€50 a persona</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 5 -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <div>
+                            <div class="day-number">05</div>
+                        </div>
+                        <div>
+                            <h3 class="day-title">Tremezzo e Villa Carlotta</h3>
+                            <p class="day-subtitle">L'eleganza delle ville liberty</p>
+                        </div>
+                    </div>
+                    <div class="day-content">
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <h3 class="time-title">Mattina</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Villa Carlotta e Giardini</h4>
+                                <p>Visita a Villa Carlotta a Tremezzo, una delle ville più belle del lago. Esplorazione dei giardini con statue, camelie e magnolie. Visita alla villa con collezione di quadri e mobili d'epoca.</p>
+                                <span class="cost paid">€15 a persona</span>
+                            </div>
+                        </div>
+                        
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-cloud-sun"></i>
+                                </div>
+                                <h3 class="time-title">Pomeriggio</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Villa Balbianello e Relax Finale</h4>
+                                <p>Traversata in battello a Villa Balbianello, famosa per essere set cinematografico. Visita ai giardini terrazzati e alla villa. Tempo libero per relax sul lago o shopping nei negozi artigianali.</p>
+                                <span class="cost paid">€30 a persona (battello + ingresso)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="time-block">
+                            <div class="time-header">
+                                <div class="time-icon">
+                                    <i class="fas fa-moon"></i>
+                                </div>
+                                <h3 class="time-title">Sera</h3>
+                            </div>
+                            <div class="activity-description">
+                                <h4>Addio al Lago con Cena Speciale</h4>
+                                <p>Cena d'addio al ristorante "Terrazza Varenna" con vista spettacolare sul lago. Menù degustazione con piatti locali e vini pregiati. Serata romantica con musica dal vivo.</p>
+                                <span class="cost paid">€85 a persona</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Budget Section -->
+        <section id="budget" class="budget-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Budget Stimato</h2>
+                    <p>Costi completi per 2 persone per 5 giorni</p>
+                </div>
+                
+                <div class="budget-container">
+                    <div class="budget-card">
+                        <h3>Pernottamento</h3>
+                        <div class="budget-amount">€800</div>
+                        <p>4 notti in hotel 4 stelle</p>
+                    </div>
+                    
+                    <div class="budget-card">
+                        <h3>Pasti</h3>
+                        <div class="budget-amount">€650</div>
+                        <p>10 cene + 5 pranzi + caffè</p>
+                    </div>
+                    
+                    <div class="budget-card">
+                        <h3>Spostamenti</h3>
+                        <div class="budget-amount">€180</div>
+                        <p>Treni, battelli e trasferimenti</p>
+                    </div>
+                    
+                    <div class="budget-card">
+                        <h3>Attività</h3>
+                        <div class="budget-amount">€220</div>
+                        <p>Ingressi e escursioni</p>
+                    </div>
+                    
+                    <div class="budget-card total-budget">
+                        <h3>Budget Totale</h3>
+                        <div class="budget-amount">€1.850</div>
+                        <p>Per 2 persone per 5 giorni</p>
+                        
+                        <div class="budget-breakdown">
+                            <div class="breakdown-item">
+                                <span>Pernottamento:</span>
+                                <span>€800</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Pasti:</span>
+                                <span>€650</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Spostamenti:</span>
+                                <span>€180</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Attività:</span>
+                                <span>€220</span>
+                            </div>
+                            <div class="breakdown-item" style="font-weight: bold; border-top: 2px solid var(--gold); padding-top: 15px; margin-top: 15px;">
+                                <span>TOTALE:</span>
+                                <span>€1.850</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Map Section -->
+        <section id="map">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Mappa Interattiva</h2>
+                    <p>Percorso del viaggio intorno al Lago di Como</p>
+                </div>
+                
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt fa-3x" style="margin-right: 15px;"></i>
+                        <span>Mappa interattiva del Lago di Como</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; text-align: center;">
+                    <h3>Luoghi Principali dell'Itinerario</h3>
+                    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+                        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); min-width: 150px;">
+                            <i class="fas fa-anchor" style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 10px;"></i>
+                            <h4>Como</h4>
+                            <p>Punto di partenza</p>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); min-width: 150px;">
+                            <i class="fas fa-mountain" style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 10px;"></i>
+                            <h4>Varenna</h4>
+                            <p>Borgo panoramico</p>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); min-width: 150px;">
+                            <i class="fas fa-water" style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 10px;"></i>
+                            <h4>Bellagio</h4>
+                            <p>Perla del Lago</p>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); min-width: 150px;">
+                            <i class="fas fa-archway" style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 10px;"></i>
+                            <h4>Stresa</h4>
+                            <p>Alpi e Borromeo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Galleria Fotografica</h2>
+                    <p>I paesaggi più belli del Lago di Como</p>
+                </div>
+                
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551447820-33aa64602b0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bellagio">
+                        <div class="overlay">Bellagio - La Perla del Lago</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551583892-005c7b0631d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Villa del Balbianello">
+                        <div class="overlay">Villa del Balbianello</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551583883-e7a0e1f0e4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Varenna">
+                        <div class="overlay">Varenna e il Castello di Vezio</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551583891-9a0a0d0e0e0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Como">
+                        <div class="overlay">Como Città</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551583890-005c7b0631d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Isola Bella">
+                        <div class="overlay">Isola Bella - Stresa</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551583889-005c7b0631d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Villa Carlotta">
+                        <div class="overlay">Villa Carlotta - Tremezzo</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lake Como Itinerary</h3>
+                    <p>Il tuo viaggio perfetto intorno al più bel lago d'Italia. Scopri paesaggi mozzafiato, borghi incantevoli e cucina locale autentica.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Link Utili</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Sito Ufficiale Lago di Como</a></li>
+                        <li><a href="#">Trasporti Navigazione Lago</a></li>
+                        <li><a href="#">Prenotazione Hotel</a></li>
+                        <li><a href="#">Escursioni Guidate</a></li>
+                        <li><a href="#">Ristoranti Consigliati</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@lakecomo.it</li>
+                        <li><i class="fas fa-phone"></i> +39 031 123 4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Como, Italia</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Lake Como Itinerary. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
